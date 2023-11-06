@@ -1,5 +1,7 @@
+import Home from "./AppOnlineGlasses/Home";
+
 function App() {
-  return <div></div>;
+  return <Home />;
 }
 
 export default App;
