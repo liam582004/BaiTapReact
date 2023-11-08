@@ -1,0 +1,39 @@
+.backGround {
+  background: url(../../public/glassesImage/background.jpg);
+  height: 600px;
+  width: 100%;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+.styleHeader {
+  background-color: #3f3f3fe8;
+  color: aliceblue;
+  padding: 20px;
+  margin: 0;
+}
+
+.face-img {
+  position: relative;
+}
+
+.review-glass {
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.review-glass img {
+  width: 100px;
+}
+
+.review-text {
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
