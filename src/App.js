@@ -1,5 +1,7 @@
+import MovieTicket from "./MovieTicket/MovieTicket.jsx";
+
 function App() {
-  return <div></div>;
+  return <MovieTicket />;
 }
 
 export default App;
