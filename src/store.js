@@ -20,6 +20,14 @@ const movieTicketReducer = (state = movieTicket, action) => {
       const totalPrice = state.totalPrice - seat.price;
       return { ...state, selectedSeats, totalPrice };
     }
+    case "movieTicket/RemoveSeat": {
+      const seat = action.payload;
+      const selectedSeats = state.selectedSeats.filter(
+        (item) => item.name !== seat.name
+      );
+      const totalPrice = state.totalPrice - seat.price;
+      return { ...state, selectedSeats, totalPrice };
+    }
     default:
       return state;
   }

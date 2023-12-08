@@ -1,16 +1,22 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 export default function Tickets() {
   const selectedSeats = useSelector((state) => {
     return state.movieTicket.selectedSeats;
   });
 
+  const dispatch = useDispatch();
+
   // Tính tổng tiền
   const totalPrice = selectedSeats.reduce(
     (total, seat) => total + seat.price,
     0
   );
+
+  const handleRemove = (seat) => {
+    dispatch({ type: "movieTicket/RemoveSeat", payload: seat });
+  };
 
   return (
     <div className="bg-dark">
@@ -31,7 +37,7 @@ export default function Tickets() {
         <span className="text-light"> Ghế chưa chọn</span>
       </div>
 
-      <table className="table ">
+      <table className="table table-dark ">
         <thead>
           <tr>
             <th className="text-light">Số ghế</th>
@@ -45,7 +51,12 @@ export default function Tickets() {
               <td className="text-warning">{item.name}</td>
               <td className="text-warning">{item.price}$</td>
               <td>
-                <button className="btn btn-danger bg-danger">X</button>
+                <button
+                  className="btn btn-danger bg-danger"
+                  onClick={() => handleRemove(item)}
+                >
+                  X
+                </button>
               </td>
             </tr>
           ))}
